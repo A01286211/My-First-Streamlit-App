@@ -21,7 +21,7 @@ if seleccion == "Clasificación de Imágenes":
     st.write("Sube una imagen de 28x28 píxeles en escala de grises para clasificarla.")
  # Cargar modelo de Fashion-MNIST
     try:
-        model_img = load_model("fashion_mnist_model.keras")
+        model_img = load_model("fashion_mnist_model.h5", compile=False)
     except:
         st.error("No se pudo cargar el modelo de clasificación de imágenes.")
 
@@ -42,7 +42,7 @@ elif seleccion == "Clasificación de Texto":
     st.write("Ingresa una reseña de película para analizar su sentimiento (positivo o negativo).")
     with open('tokenizer_imdb.pkl','rb') as f:
         tokenizer = pickle.load(f)
-    model_text = load_model("imdb_model.keras")
+    model_text = load_model("imdb_model.h5", compile=False)
 
     from keras.preprocessing.sequence import pad_sequences
 
@@ -60,7 +60,7 @@ elif seleccion == "Regresión de Vivienda":
     st.title("Regresión de Vivienda con Boston Housing")
     st.write("Ingresa las características de una vivienda para predecir su precio en miles de dólares.")
     try:
-        model_reg = load_model("boston_housing_model.keras")
+        model_reg = load_model("boston_housing_model.h5", compile=False)
     except:
         st.error("No se pudo cargar el modelo de regresión.")
 

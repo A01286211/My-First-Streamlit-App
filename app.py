@@ -10,8 +10,8 @@ import os
 with st.sidebar:
     seleccion = option_menu(
         "Menú Principal", 
-        ["Clasificación de Imágenes", "Clasificación de Texto", "Regresión de Vivienda", "Acerca de"], 
-        icons=['image', 'chat-right-text', 'house', 'info-circle'],
+        ["Acerca de", "Clasificación de Imágenes", "Clasificación de Texto", "Regresión de Vivienda"], 
+        icons=['info_circle', 'chat-right-text', 'house', 'image'],
         menu_icon="app", 
         default_index=0
     )

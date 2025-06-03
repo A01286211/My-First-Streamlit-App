@@ -29,8 +29,10 @@ if seleccion == "Clasificación de Imágenes":
     if uploaded_file:
         image = Image.open(uploaded_file).convert("L").resize((28,28))
         st.image(image, caption="Imagen subida", use_column_width=False)
-        img_array = np.array(image) / 255.0
-        img_array = img_array.reshape(1,28,28,1)
+        # Preprocesamiento correcto para modelo con entrada (784,)
+        img_array = np.array(image.convert("L").resize((28, 28))) / 255.0
+        img_array = img_array.reshape(1, 784).astype("float32")  # aplanado
+        
         # Predicción
         pred = model_img.predict(img_array)
         idx = int(np.argmax(pred))
@@ -83,7 +85,9 @@ elif seleccion == "Regresión de Vivienda":
 
     if st.button("Predecir Precio"):
         features = np.array([[cr, zn, indus, chas, nox, rm, age, dis, rad, tax, ptratio, black, lstat]])
-        pred_price = model_reg.predict(features)[0]
+        # Supongamos que `pred_price = model.predict(...)`
+        pred_price = float(model_reg.predict(features)[0][0])  # <-- extraer valor escalar
+        
         st.write(f"Precio predicho (miles $): **{pred_price:.2f}**")
 elif seleccion == "Acerca de":
     st.title("Acerca de esta Aplicación")

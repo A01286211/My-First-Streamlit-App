@@ -68,20 +68,20 @@ elif seleccion == "Regresión de Vivienda":
 
     col1, col2 = st.columns(2)
     with col1:
-        cr = st.number_input("Crimen per cápita (CRIM)", value=0.1)
-        zn = st.number_input("Zonas residenciales (>25k sq.ft.) (ZN)", value=1)
-        indus = st.number_input("Terrenos no-comerciales (%) (INDUS)", value=10)
+        cr = st.number_input("Crimen per cápita (CRIM)", value=0.28)
+        zn = st.number_input("Zonas residenciales (>25k sq.ft.) (ZN)", value=0)
+        indus = st.number_input("Terrenos no-comerciales (%) (INDUS)", value=9.69)
         chas = st.number_input("Orilla Río Charles? (CHAS=1)", min_value=0, max_value=1, value=0)
-        nox = st.number_input("Concentración de óxidos nítricos (ppm)", value=0.5)
-        rm = st.number_input("Habitaciones promedio (RM)", value=6)
-        age = st.number_input("Unidades habitadas por propetarios counstruidas pre-1940 (%)", value=68)
+        nox = st.number_input("Concentración de óxidos nítricos (ppm)", value=0.585)
+        rm = st.number_input("Habitaciones promedio (RM)", value=5.926)
+        age = st.number_input("Unidades habitadas por propetarios counstruidas pre-1940 (%)", value=46.2)
     with col2:
-        dis = st.number_input("Distancia ponderada a centros de empleo (DIS)", value=4)
-        rad = st.number_input("Accesibilidad a autopistas (RAD)", value=4)
-        tax = st.number_input("Tasa impuestos ($/10k) (TAX)", value=300)
-        ptratio = st.number_input("Alumnos por maestro en poblado (PTRATIO)", value=16)
-        black = st.number_input("1000(Bk-0.63)^2 (B)", value=390)
-        lstat = st.number_input("% de población de bajo nivel (LSTAT)", value=12)
+        dis = st.number_input("Distancia ponderada a centros de empleo (DIS)", value=2.3817)
+        rad = st.number_input("Accesibilidad a autopistas (RAD)", value=6)
+        tax = st.number_input("Tasa impuestos ($/10k) (TAX)", value=391)
+        ptratio = st.number_input("Alumnos por maestro en poblado (PTRATIO)", value=19.2)
+        black = st.number_input("1000(Bk-0.63)^2 (B)", value=396.9)
+        lstat = st.number_input("% de población de bajo nivel (LSTAT)", value=13.59)
 
     if st.button("Predecir Precio"):
         features = np.array([[cr, zn, indus, chas, nox, rm, age, dis, rad, tax, ptratio, black, lstat]])

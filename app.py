@@ -90,8 +90,19 @@ elif seleccion == "Regresión de Vivienda":
         
         st.write(f"Precio predicho (miles $): **{pred_price:.2f}**")
 elif seleccion == "Acerca de":
-    st.title("Acerca de esta Aplicación")
-    st.write("Esta aplicación utiliza modelos de Machine Learning para realizar tareas de clasificación y regresión.")
-    st.write("Desarrollada por Sebas como parte del curso de Machine Learning.")
-    st.write("Puedes encontrar el código fuente en")
+ st.title("Acerca de esta Aplicación")
+    
+    st.markdown("""
+Esta aplicación fue desarrollada como parte de la materia **Modeling Learning with Artificial Intelligence**.
+
+Incluye tres modelos de aprendizaje profundo entrenados con datasets clásicos de Keras:
+
+- 🧥 **Fashion MNIST**: Clasificación de imágenes de prendas.
+- 🎬 **IMDB**: Clasificación de sentimiento en reseñas de películas.
+- 🏠 **Boston Housing**: Predicción de precios de viviendas.
+
+El código fuente completo está disponible en GitHub:
+
+🔗 [Ver repositorio en GitHub](https://github.com/A01286211/My-First-Streamlit-App)
+""")
 

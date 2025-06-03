@@ -101,8 +101,12 @@ elif seleccion == "Acerca de":
     - 🎬 **IMDB**: Clasificación de sentimiento en reseñas de películas.
     - 🏠 **Boston Housing**: Predicción de precios de viviendas.
     
-    El código fuente completo está disponible en GitHub:
+    El código fuente de la Streamlit App completo está disponible en GitHub:
     
     🔗 [Ver repositorio en GitHub](https://github.com/A01286211/My-First-Streamlit-App)
+
+    El código del cual se obtuvieron los modelos entrenados se encuentra en Colab:
+
+    🔗 [Ver Colab Notebook](https://colab.research.google.com/drive/1NvpuKVffAYgi2TfAmWPB-FMpXNa2rVbA?usp=sharing)
     """)
     

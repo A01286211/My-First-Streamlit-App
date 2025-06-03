@@ -11,7 +11,7 @@ with st.sidebar:
     seleccion = option_menu(
         "Menú Principal", 
         ["Acerca de", "Clasificación de Imágenes", "Clasificación de Texto", "Regresión de Vivienda"], 
-        icons=['info-circle', 'chat-right-text', 'house', 'image'],
+        icons=['info-circle', 'image', 'chat-right-text', 'house'],
         menu_icon="app", 
         default_index=0
     )

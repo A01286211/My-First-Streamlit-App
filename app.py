@@ -18,14 +18,14 @@ with st.sidebar:
 
 if seleccion == "Clasificación de Imágenes":
     st.title("Clasificación de Imágenes con Fashion-MNIST")
-    st.write("Sube una imagen de 28x28 píxeles en escala de grises para clasificarla.")
+    st.write("Sube una imagen en escala de grises para clasificarla.")
  # Cargar modelo de Fashion-MNIST
     try:
         model_img = load_model("fashion_mnist_model.h5", compile=False)
     except:
         st.error("No se pudo cargar el modelo de clasificación de imágenes.")
 
-    uploaded_file = st.file_uploader("Sube una imagen (28×28 en gris)", type=["png","jpg","jpeg"])
+    uploaded_file = st.file_uploader("Sube una imagen en escala de grises", type=["png","jpg","jpeg"])
     if uploaded_file:
         image = Image.open(uploaded_file).convert("L").resize((28,28))
         st.image(image, caption="Imagen subida", use_column_width=False)

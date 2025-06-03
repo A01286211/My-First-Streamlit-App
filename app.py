@@ -12,7 +12,7 @@ with st.sidebar:
         "Menú Principal", 
         ["Clasificación de Imágenes", "Clasificación de Texto", "Regresión de Vivienda", "Acerca de"], 
         icons=['image', 'chat-right-text', 'house', 'info-circle'],
-        menu_icon="home", 
+        menu_icon="house", 
         default_index=0
     )
 
